@@ -1,0 +1,20 @@
+.container {
+  width: 1120px;
+  margin: 0 auto;
+}
+
+.f-row {
+  display: flex;
+}
+
+.f-center-y {
+  align-items: center;
+}
+
+.f-center-x {
+  justify-content: space-between;
+}
+
+.txt-center {
+  text-align: center;
+}

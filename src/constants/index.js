@@ -1,0 +1,1 @@
+export const LOSS_RATE = 0.2;
