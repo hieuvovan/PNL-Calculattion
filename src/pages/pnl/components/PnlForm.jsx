@@ -35,11 +35,11 @@ const PnlForm = () => {
     const inputVal = e.target.value;
     let newLossProfit = LOSS_RATE * +value.margin;
     let newLeverage = (+inputVal !== +value.opening) ? 
-                      (Math.floor(newLossProfit / (+value.margin * +value.opening * (1 / +inputVal - 1 / +value.opening)))) :
+                      (Math.round(newLossProfit / (+value.margin * +value.opening * (1 / +inputVal - 1 / +value.opening)))) :
                       value.leverage;
     setValue({
       ...value,
-      leverage: newLeverage,
+      leverage: Math.abs(newLeverage),
       loss: inputVal
     });
   }
@@ -64,6 +64,10 @@ const PnlForm = () => {
         <input value={value.leverage} name="leverage" type="range" min="1" max="125" step="1" onChange={(e) => handleChange(e)} />
       </div>
       <form>
+        <div className="form-input-item f-row f-center-x">
+          <label htmlFor="leverage">Leverage</label>
+          <input placeholder="Enter Margin" value={value.leverage} type="text" name="leverage" onChange={(e) => handleChange(e)} />
+        </div>
         <div className="form-input-item f-row f-center-x">
           <label htmlFor="margin">Margin</label>
           <input placeholder="Enter Margin" value={value.margin} type="text" name="margin" onChange={(e) => handleChange(e)} />

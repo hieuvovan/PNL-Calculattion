@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path='/pnl' component={PnlPage} />
+        <Route exact path='/' component={PnlPage} />
       </Switch>
     </Router>
   );
