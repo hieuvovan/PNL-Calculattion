@@ -12,7 +12,7 @@ export const Result = () => {
             (margin * leverage * opening * (1 / closing - 1 / opening));
   let pnlRate = pnl * 100 / margin;
 
-  let lossProfit = !!direction ? 
+  let lossProfit = !!direction ?
                   (margin * leverage * opening * (1 / opening - 1 / loss)) :
                   (margin * leverage * opening * (1 / loss - 1 / opening));
   let lossRate = lossProfit * 100 / margin
@@ -21,15 +21,15 @@ export const Result = () => {
     <div className="result-wrapper">
       <h4 className="title txt-center">Result</h4>
       <div className="result f-row f-center-x">
-        <p className="result-label">P&L(BTC) :</p>
+        <p className="result-label">Profit :</p>
         <span className={pnl < 0 ? 'danger' : 'ok'}>{pnl ? pnl.toFixed(2) : '--'}</span>
       </div>
       <div className="result f-row f-center-x">
-        <p className="result-label">P&L Rate :</p>
+        <p className="result-label">Profit Rate :</p>
         <span className={pnl < 0 ? 'danger' : 'ok'}>{pnlRate ? `${pnlRate.toFixed(2)}%` : '--'}</span>
       </div>
       <div className="result f-row f-center-x">
-        <p className="result-label">Loss Profit :</p>
+        <p className="result-label">Loss :</p>
         <span className={lossProfit < 0 ? 'danger' : 'ok'}>{!!loss && lossProfit.toFixed(2)}</span>
       </div>
       <div className="result f-row f-center-x">
