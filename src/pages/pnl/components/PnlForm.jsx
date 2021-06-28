@@ -81,8 +81,8 @@ const PnlForm = () => {
           <input placeholder="Enter the Closing Price" value={value.closing} type="text" name="closing" onChange={(e) => handleChange(e)} />
         </div>
         <div className="form-input-item f-row f-center-x">
-          <label htmlFor="loss">Lossing Price</label>
-          <input placeholder="Enter the Loss Price" value={value.loss} type="text" name="loss" onChange={(e) => handleLossChange(e)} />
+          <label htmlFor="loss">Stoploss Price</label>
+          <input placeholder="Enter the Stoploss Price" value={value.loss} type="text" name="loss" onChange={(e) => handleLossChange(e)} />
         </div>
       </form>
     </div>

@@ -21,19 +21,19 @@ export const Result = () => {
     <div className="result-wrapper">
       <h4 className="title txt-center">Result</h4>
       <div className="result f-row f-center-x">
-        <p className="result-label">Profit :</p>
+        <p className="result-label">Profit:</p>
         <span className={pnl < 0 ? 'danger' : 'ok'}>{pnl ? pnl.toFixed(2) : '--'}</span>
       </div>
       <div className="result f-row f-center-x">
-        <p className="result-label">Profit Rate :</p>
+        <p className="result-label">Profit Rate:</p>
         <span className={pnl < 0 ? 'danger' : 'ok'}>{pnlRate ? `${pnlRate.toFixed(2)}%` : '--'}</span>
       </div>
       <div className="result f-row f-center-x">
-        <p className="result-label">Loss :</p>
+        <p className="result-label">Loss:</p>
         <span className={lossProfit < 0 ? 'danger' : 'ok'}>{!!loss && lossProfit.toFixed(2)}</span>
       </div>
       <div className="result f-row f-center-x">
-        <p className="result-label">Loss Rate :</p>
+        <p className="result-label">Loss Rate:</p>
         <span className={lossRate < 0 ? 'danger' : 'ok'}>{!!loss && lossRate.toFixed(2) + '%'}</span>
       </div>
     </div>
