@@ -4,9 +4,9 @@ const initialState = {
   pnlParams: {
     leverage: 20,
     margin: 0, 
-    opening: 0, 
-    closing: 0,
-    loss: 0
+    entry: 0, 
+    profitable: 0,
+    stoploss: 0
   },
   direction: 1
 }
@@ -19,9 +19,9 @@ const pnlReducer = (state = initialState, action) => {
         pnlParams: {
           leverage: action.payload.leverage,
           margin: +action.payload.margin,
-          opening: +action.payload.opening,
-          closing: +action.payload.closing,
-          loss: +action.payload.loss
+          entry: +action.payload.entry,
+          profitable: +action.payload.profitable,
+          stoploss: +action.payload.stoploss
         }
       }
     

@@ -1,1 +1,1 @@
-export const LOSS_RATE = 0.2;
+export const LOSS_RATE = 0.25;

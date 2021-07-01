@@ -10,9 +10,9 @@ const PnlForm = () => {
   const [value, setValue] = useState({
     leverage: 20,
     margin: '',
-    opening: '',
-    closing: '',
-    loss: ''
+    entry: '',
+    profitable: '',
+    stoploss: ''
   });
   const dispatch = useDispatch();
 
@@ -34,18 +34,18 @@ const PnlForm = () => {
   const handleLossChange = (e) => {
     const inputVal = e.target.value;
     let newLossProfit = LOSS_RATE * +value.margin;
-    let newLeverage = (+inputVal !== +value.opening) ? 
-                      (Math.round(newLossProfit / (+value.margin * +value.opening * (1 / +inputVal - 1 / +value.opening)))) :
+    let newLeverage = (+inputVal !== +value.entry) ? 
+                      (Math.round(newLossProfit / (+value.margin * +value.entry * (1 / +inputVal - 1 / +value.entry)))) :
                       value.leverage;
     setValue({
       ...value,
       leverage: Math.abs(newLeverage),
-      loss: inputVal
+      stoploss: inputVal
     });
   }
 
   useEffect(() => {
-    if (isFullParams(value) || (isFullParams(value) && !!value.loss)) {
+    if (isFullParams(value) || (isFullParams(value) && !!value.stoploss)) {
       dispatch(addPnlParams(value));
     }
   }, [value]);
@@ -66,23 +66,23 @@ const PnlForm = () => {
       <form>
         <div className="form-input-item f-row f-center-x">
           <label htmlFor="leverage">Leverage</label>
-          <input placeholder="Enter Margin" value={value.leverage} type="text" name="leverage" onChange={(e) => handleChange(e)} />
+          <input placeholder="Enter Leverage" value={value.leverage} type="text" name="leverage" onChange={(e) => handleChange(e)} />
         </div>
         <div className="form-input-item f-row f-center-x">
           <label htmlFor="margin">Margin</label>
           <input placeholder="Enter Margin" value={value.margin} type="text" name="margin" onChange={(e) => handleChange(e)} />
         </div>
         <div className="form-input-item f-row f-center-x">
-          <label htmlFor="opening">Opening Price</label>
-          <input placeholder="Enter the Opening Price" value={value.opening} type="text" name="opening" onChange={(e) => handleChange(e)} />
+          <label htmlFor="entry">Entry Price</label>
+          <input placeholder="Enter the Entry Price" value={value.entry} type="text" name="entry" onChange={(e) => handleChange(e)} />
         </div>
         <div className="form-input-item f-row f-center-x">
-          <label htmlFor="closing">Closing Price</label>
-          <input placeholder="Enter the Closing Price" value={value.closing} type="text" name="closing" onChange={(e) => handleChange(e)} />
+          <label htmlFor="profitable">Profitable Price</label>
+          <input placeholder="Enter the Profitable Price" value={value.profitable} type="text" name="profitable" onChange={(e) => handleChange(e)} />
         </div>
         <div className="form-input-item f-row f-center-x">
-          <label htmlFor="loss">Stoploss Price</label>
-          <input placeholder="Enter the Stoploss Price" value={value.loss} type="text" name="loss" onChange={(e) => handleLossChange(e)} />
+          <label htmlFor="stoploss">Stoploss Price</label>
+          <input placeholder="Enter the Stoploss Price" value={value.stoploss} type="text" name="stoploss" onChange={(e) => handleLossChange(e)} />
         </div>
       </form>
     </div>
