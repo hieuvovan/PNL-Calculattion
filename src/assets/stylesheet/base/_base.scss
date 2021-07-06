@@ -3,18 +3,26 @@
   margin: 0 auto;
 }
 
-.f-row {
-  display: flex;
-}
-
-.f-center-y {
-  align-items: center;
-}
-
-.f-center-x {
-  justify-content: space-between;
-}
-
 .txt-center {
   text-align: center;
+}
+
+@media only screen and (max-width: 575px)  {
+  .container-sm {
+    max-width: 575px;
+    margin: 0 auto;
+  }
+
+  .f-column-sm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .f-center-x-sm {
+    justify-content: center;
+  }
+
+  .f-center-y-sm {
+    align-items: center;
+  }
 }

@@ -56,9 +56,9 @@ const PnlForm = () => {
 
   return (
     <div className="pnl-form">
-      <div className="btn-wrapper f-row f-center-x">
-        <button name='long' onClick={(e) => handleClick(e)} className={`btn ${!!direction && 'btn-primary'}`} type="button">Long</button>
-        <button name='short' onClick={(e) => handleClick(e)} className={`btn ${!direction && 'btn-danger'}`} type="button">Short</button>
+      <div className="btn-wrapper row f-center-x">
+        <button name='long' onClick={(e) => handleClick(e)} className={`btn  col-sm-5 ${!!direction && 'btn-primary'}`} type="button">Long</button>
+        <button name='short' onClick={(e) => handleClick(e)} className={`btn col-sm-5 ${!direction && 'btn-danger'}`} type="button">Short</button>
       </div>
       <div className='leverage-slider'>
         <input value={value.leverage} name="leverage" type="range" min="1" max="125" step="1" onChange={(e) => handleChange(e)} />
