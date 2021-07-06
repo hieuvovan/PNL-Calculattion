@@ -5,7 +5,7 @@ import Result from './components/Result';
 const PnlPage = () => {
   return (
     <div className="container container-sm">
-      <div className="page-wrapper f-column f-center-x-sm f-center-y-sm">
+      <div className="page-wrapper f-row f-column-sm f-center-x f-center-y">
         <PnlForm />
         <Result />
       </div>

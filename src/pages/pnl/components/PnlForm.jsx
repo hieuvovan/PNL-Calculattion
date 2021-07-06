@@ -57,7 +57,7 @@ const PnlForm = () => {
   return (
     <div className="pnl-form">
       <div className="btn-wrapper row f-center-x">
-        <button name='long' onClick={(e) => handleClick(e)} className={`btn  col-sm-5 ${!!direction && 'btn-primary'}`} type="button">Long</button>
+        <button name='long' onClick={(e) => handleClick(e)} className={`btn col-sm-5 ${!!direction && 'btn-primary'}`} type="button">Long</button>
         <button name='short' onClick={(e) => handleClick(e)} className={`btn col-sm-5 ${!direction && 'btn-danger'}`} type="button">Short</button>
       </div>
       <div className='leverage-slider'>
