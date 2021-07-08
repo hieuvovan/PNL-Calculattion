@@ -47,11 +47,11 @@ const PnlForm = () => {
     if (isFullParams(value) || (isFullParams(value) && !!value.stoploss)) {
       dispatch(addPnlParams(value));
     }
-  }, [value]);
+  }, [value]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    dispatch(updateDirection(direction));
-  }, [direction]);
+    dispatch(updateDirection(direction)); 
+  }, [direction]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="pnl-form">
