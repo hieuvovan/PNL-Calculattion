@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addPnlParams, updateDirection } from '../../stores/actions';
 import { isFullParams } from '../../../helpers/filter/index';
 import { LOSS_RATE } from '../../../constants';
 
 const PnlForm = () => {
-  const pnlParams = useSelector(state => state.pnlReducer.pnlParams);
   const [direction, setDirection] = useState(1);
   const [value, setValue] = useState({
     leverage: 20,
